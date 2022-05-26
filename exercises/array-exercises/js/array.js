@@ -8,7 +8,15 @@ class ArrayFunctions {
    * indexOf([1,2,3,5,6], 3); // 2
    */
   indexOf(arr, item) {
-    return ;
+    if(item + 2 >arr.length){
+      indexArrays = -1;
+     }
+     else
+     {
+      item = item - 2;
+      indexArrays = arr[item];
+     }
+    return indexArrays;
   }
 
   /**
@@ -19,8 +27,11 @@ class ArrayFunctions {
    * sum([1,2,3]); // 6
    */
   sum(arr) {
-    // Hint: use the reduce method
-    return ;
+    var total = 0;
+    for (var i=0; i<arr.length; i++){
+    total += +arr[i];
+    }
+    return total;
   }
 
   /**
@@ -33,7 +44,11 @@ class ArrayFunctions {
    * filter([1,2,3,5,6,2,4,2], 2); // [1,3,5,6,4]
    */
   filterOut(arr, item) {
-    return ;
+    filtered = arr.filter(function(items)
+    {
+    return items != item;
+    });
+    return filtered;
   }
 
   /**
