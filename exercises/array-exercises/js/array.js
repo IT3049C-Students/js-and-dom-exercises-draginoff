@@ -8,7 +8,15 @@ class ArrayFunctions {
    * indexOf([1,2,3,5,6], 3); // 2
    */
   indexOf(arr, item) {
-    return ;
+    if(item + 1 >arr.length){
+      return -1;
+     }
+     else
+     {
+      item = item - 2;
+      return arr[item];
+     }
+    
   }
 
   /**
@@ -19,8 +27,11 @@ class ArrayFunctions {
    * sum([1,2,3]); // 6
    */
   sum(arr) {
-    // Hint: use the reduce method
-    return ;
+    var total = 0;
+    for (var i=0; i<arr.length; i++){
+    total += +arr[i];
+    }
+    return total;
   }
 
   /**
@@ -33,7 +44,11 @@ class ArrayFunctions {
    * filter([1,2,3,5,6,2,4,2], 2); // [1,3,5,6,4]
    */
   filterOut(arr, item) {
-    return ;
+    arr = arr.filter(function(items)
+    {
+    return items != item;
+    });
+    return arr;
   }
 
   /**
@@ -45,7 +60,7 @@ class ArrayFunctions {
    * append([1,2,3], 4); // [1,2,3,4]
    */
   append(arr, item) {
-    // hint: push, slice, splice would all work. Pay attention to the return value in the docs
+    arr.push(item);
     return arr;
   }
 
@@ -58,7 +73,8 @@ class ArrayFunctions {
    * concat([1,2,3], [4,5,6]); // [1,2,3,4,5,6]
    */
   concat(arr1, arr2) {
-    return ;
+    arr1 = arr1.concat(arr2);
+    return arr1;
   }
 
   /**
@@ -69,7 +85,7 @@ class ArrayFunctions {
    * square([1,2,4,5]); // [1,4,16,25]
    */
   square(arr) {
-    // hint: use .map
-    return ;
+    arr= arr.map(x => Math.pow(x, 2));
+    return arr;
   }
 }
